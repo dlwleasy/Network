@@ -8,9 +8,9 @@ int main(void)
 {
 
 	int fd, fd1;
-	char buf[]="Computer Network 2025 ZZANG!\n";
-	char read_buf[1024];
-	int read_len=0;
+	char buf[]="Computer Network 2025 ZZANG!\n"; /buf: 쓸 문자열 (쓰기 대상)
+	char read_buf[1024]; /read_buf: 읽은 내용을 저장할 버퍼
+	int read_len=0; /ead_len: 실제로 읽은 바이트 수 저장
 
 	fd=open("data.txt", O_CREAT|O_WRONLY|O_TRUNC);
 
@@ -30,7 +30,7 @@ int main(void)
 	printf("Read result: %s",read_buf);
 
 	close(fd);
-	close(fd1);
+	close(fd1);/열었던 파일 디스크립터를 시스템에 반환
 
 	return 0;
 }
